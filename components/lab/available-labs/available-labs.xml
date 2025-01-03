@@ -1,0 +1,20 @@
+<StackLayout class="p-4 bg-white border-b border-gray-200">
+    <Label text="Available Labs Nearby" class="text-xl font-bold mb-4" />
+    <Repeater items="{{ nearbyLabs }}">
+        <Repeater.itemTemplate>
+            <GridLayout class="mb-4 bg-white rounded-lg p-4 border border-gray-200" tap="{{ $parent.onSelectLab }}">
+                <StackLayout>
+                    <GridLayout columns="*,auto">
+                        <Label col="0" text="{{ name }}" class="font-bold" />
+                        <Label col="1" text="{{ distance }}" class="text-gray-600" />
+                    </GridLayout>
+                    <Label text="{{ address }}" class="text-gray-600 text-sm" />
+                    <GridLayout columns="auto,*" class="mt-2">
+                        <Label col="0" text="{{ rating }} ⭐" class="text-sm" />
+                        <Label col="1" text="{{ accredited ? '✓ Accredited' : '' }}" class="text-green-600 text-sm" />
+                    </GridLayout>
+                </StackLayout>
+            </GridLayout>
+        </Repeater.itemTemplate>
+    </Repeater>
+</StackLayout>

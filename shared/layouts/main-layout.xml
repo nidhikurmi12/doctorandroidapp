@@ -1,0 +1,6 @@
+<GridLayout rows="*, auto">
+    <Frame row="0" defaultPage="{{ currentPage }}" />
+    <ContentView row="1">
+        <include src="~/components/bottom-tabs/bottom-tabs" />
+    </ContentView>
+</GridLayout>

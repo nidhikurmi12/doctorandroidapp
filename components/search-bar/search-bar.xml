@@ -1,0 +1,12 @@
+<StackLayout class="w-full p-4 bg-white">
+    <GridLayout columns="auto,*" class="bg-gray-100 rounded-full p-2">
+        <Label col="0" text="🔍" class="ml-2" />
+        <TextField 
+            col="1"
+            text="{{ searchQuery }}"
+            hint="Search medicines, doctors, or tests"
+            class="ml-2"
+            returnKeyType="search"
+            returnPress="{{ onSearch }}" />
+    </GridLayout>
+</StackLayout>

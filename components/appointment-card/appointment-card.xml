@@ -1,0 +1,11 @@
+<CardView class="m-4 bg-white rounded-lg elevation-2">
+    <StackLayout class="p-4">
+        <Label text="Upcoming Appointment" class="font-bold mb-2" />
+        <GridLayout columns="auto,*" rows="auto,auto" class="mb-2">
+            <Label col="0" row="0" text="📅" class="mr-2" />
+            <Label col="1" row="0" text="{{ appointmentDate }}" class="text-gray-600" />
+            <Label col="0" row="1" text="👨‍⚕️" class="mr-2" />
+            <Label col="1" row="1" text="{{ doctorName }}" class="text-gray-600" />
+        </GridLayout>
+    </StackLayout>
+</CardView>

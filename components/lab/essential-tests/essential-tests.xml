@@ -1,0 +1,21 @@
+<StackLayout class="p-4 bg-white">
+    <Label text="Essential Health Tests" class="text-xl font-bold mb-4" />
+    <Repeater items="{{ essentialTests }}">
+        <Repeater.itemTemplate>
+            <GridLayout class="mb-4 bg-white rounded-lg p-4 border border-gray-200">
+                <StackLayout>
+                    <GridLayout columns="*,auto">
+                        <Label col="0" text="{{ name }}" class="font-bold" />
+                        <Label col="1" text="{{ price }}" class="text-blue-600 font-bold" />
+                    </GridLayout>
+                    <Label text="{{ description }}" class="text-gray-600 text-sm" textWrap="true" />
+                    <Label text="Preparation: {{ preparationTime }}" class="text-gray-500 text-sm mt-2" />
+                    <Button 
+                        text="Book Test" 
+                        tap="{{ $parent.onBookTest }}"
+                        class="bg-blue-600 text-white text-sm p-2 rounded mt-2" />
+                </StackLayout>
+            </GridLayout>
+        </Repeater.itemTemplate>
+    </Repeater>
+</StackLayout>

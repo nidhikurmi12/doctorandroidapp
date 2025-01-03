@@ -1,0 +1,16 @@
+<StackLayout class="p-4 bg-white border-b border-gray-200">
+    <Label text="Specialties" class="text-lg font-bold mb-4" />
+    <GridLayout rows="auto, auto" columns="*,*,*" class="text-center">
+        <Repeater items="{{ specialties }}">
+            <Repeater.itemTemplate>
+                <StackLayout 
+                    class="{{ id === $parent.selectedSpecialty ? 'bg-blue-50' : '' }} p-4 m-1 rounded-lg"
+                    tap="{{ $parent.onSpecialtySelect }}"
+                    row="{{ index / 3 | floor }}"
+                    col="{{ index % 3 }}">
+                    <Label text="{{ icon }}" class="text-2xl text-center" />
+                    <Label text="{{ name }}" class="text-sm" textWrap="true" />
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </GridLayout>
+    </StackLayout>

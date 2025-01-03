@@ -1,0 +1,31 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Home" flat="true" />
+    <ScrollView>
+        <StackLayout>
+            <!-- Search Bar -->
+            <include src="~/components/search-bar/search-bar" />
+            
+            <!-- Welcome Banner -->
+            <StackLayout class="p-6 bg-blue-600">
+                <Label text="{{ welcomeMessage }}" class="text-2xl text-white font-bold" />
+            </StackLayout>
+            
+            <!-- Quick Links -->
+            <include src="~/components/quick-links/quick-links" />
+            
+            <!-- Appointment Reminders -->
+            <include src="~/components/appointment-card/appointment-card" />
+            
+            <!-- Health Tips -->
+            <Label text="Health Tips" class="text-lg font-bold px-4 mt-4" />
+            <include src="~/components/health-tips/health-tips" />
+            
+            <!-- Featured Sections -->
+            <GridLayout rows="auto,auto,auto" columns="*" class="p-4">
+                <Label row="0" text="Nearby Hospitals" class="text-lg font-bold mb-2" />
+                <Label row="1" text="Recommended Tests" class="text-lg font-bold mb-2" />
+                <Label row="2" text="Popular Medicines" class="text-lg font-bold mb-2" />
+            </GridLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

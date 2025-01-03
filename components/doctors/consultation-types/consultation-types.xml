@@ -1,0 +1,19 @@
+<StackLayout class="p-4 bg-white border-b border-gray-200">
+    <Label text="Consultation Type" class="text-lg font-bold mb-4" />
+    <ScrollView orientation="horizontal">
+        <Repeater items="{{ consultationTypes }}">
+            <Repeater.itemTemplate>
+                <StackLayout 
+                    class="{{ id === $parent.selectedConsultationType ? 'bg-blue-600' : 'bg-white border border-gray-200' }} mr-4 p-4 rounded-lg"
+                    tap="{{ $parent.onConsultationTypeSelect }}">
+                    <Label 
+                        text="{{ icon }}" 
+                        class="text-2xl text-center" />
+                    <Label 
+                        text="{{ name }}" 
+                        class="{{ id === $parent.selectedConsultationType ? 'text-white' : 'text-gray-800' }} text-center text-sm" 
+                        textWrap="true" />
+                </StackLayout>
+            </Repeater.itemTemplate>
+        </ScrollView>
+    </StackLayout>

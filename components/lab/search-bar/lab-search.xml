@@ -1,0 +1,16 @@
+<StackLayout class="p-4 bg-white border-b border-gray-200">
+    <GridLayout columns="*,auto" class="bg-gray-100 rounded-lg p-2">
+        <TextField 
+            col="0"
+            text="{{ searchQuery }}"
+            hint="Search for lab tests"
+            class="p-2"
+            returnKeyType="search"
+            returnPress="{{ onSearch }}" />
+        <Label 
+            col="1" 
+            text="🔍" 
+            class="text-xl p-2" 
+            tap="{{ onSearch }}" />
+    </GridLayout>
+</StackLayout>

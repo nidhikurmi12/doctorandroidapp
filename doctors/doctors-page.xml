@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Find Doctors" flat="true" />
+    <ScrollView>
+        <StackLayout class="bg-gray-100">
+            <!-- Search and Filters -->
+            <include src="~/components/doctors/search-filters/search-filters" />
+            
+            <!-- Consultation Types -->
+            <include src="~/components/doctors/consultation-types/consultation-types" />
+            
+            <!-- Specialties -->
+            <include src="~/components/doctors/specialties/specialties" />
+            
+            <!-- Doctors List -->
+            <include src="~/components/doctors/doctors-list/doctors-list" />
+        </StackLayout>
+    </ScrollView>
+</Page>

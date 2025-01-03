@@ -1,0 +1,59 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="bg-gray-100">
+    <ActionBar title="Login" flat="true" />
+    <ScrollView>
+        <StackLayout class="p-6 space-y-4">
+            <!-- Logo or App Name -->
+            <Label text="🏥" class="text-6xl text-center mb-2" />
+            <Label text="HealthCare App" class="text-3xl font-bold text-center text-gray-800 mb-8" />
+            
+            <!-- Email Field -->
+            <Label text="Email" class="text-sm font-medium text-gray-700" />
+            <TextField 
+                text="{{ email }}" 
+                hint="Enter your email"
+                keyboardType="email"
+                autocorrect="false"
+                autocapitalizationType="none"
+                class="p-4 bg-white rounded-lg border border-gray-300 text-gray-900" 
+                style="placeholder-color: #9CA3AF;" />
+            
+            <!-- Password Field -->
+            <Label text="Password" class="text-sm font-medium text-gray-700" />
+            <TextField 
+                text="{{ password }}" 
+                hint="Enter your password"
+                secure="true"
+                class="p-4 bg-white rounded-lg border border-gray-300 text-gray-900"
+                style="placeholder-color: #9CA3AF;" />
+            
+            <!-- Forgot Password Link -->
+            <Label 
+                text="Forgot Password?" 
+                tap="{{ onForgotPassword }}"
+                class="text-blue-600 text-right text-sm" />
+            
+            <!-- Login Button -->
+            <Button 
+                text="{{ isLoading ? 'Logging in...' : 'Login' }}"
+                tap="{{ onLogin }}"
+                isEnabled="{{ !isLoading }}"
+                class="bg-blue-600 text-white font-medium py-3 rounded-lg" />
+            
+            <!-- Register Link -->
+            <StackLayout orientation="horizontal" class="justify-center">
+                <Label text="Don't have an account? " class="text-gray-600" />
+                <Label 
+                    text="Register" 
+                    tap="{{ onRegister }}"
+                    class="text-blue-600 font-medium" />
+            </StackLayout>
+
+            <!-- Demo Credentials -->
+            <StackLayout class="bg-gray-200 p-4 rounded-lg mt-8">
+                <Label text="Demo Credentials" class="font-bold text-center mb-2" />
+                <Label text="Email: john@example.com" class="text-center" />
+                <Label text="Password: password123" class="text-center" />
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</Page>

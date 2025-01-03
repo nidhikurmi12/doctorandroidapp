@@ -1,0 +1,16 @@
+<StackLayout class="mt-4">
+    <Repeater items="{{ menuItems }}">
+        <Repeater.itemTemplate>
+            <GridLayout columns="auto, *, auto" class="bg-white p-4 border-b border-gray-200" tap="{{ $parent.onMenuItemTap }}">
+                <!-- Menu Item Icon -->
+                <Label col="0" text="{{ icon }}" class="text-xl mr-4" />
+                
+                <!-- Menu Item Title -->
+                <Label col="1" text="{{ title }}" class="text-gray-800" />
+                
+                <!-- Arrow Icon -->
+                <Label col="2" text="›" class="text-gray-400 text-xl" />
+            </GridLayout>
+        </Repeater.itemTemplate>
+    </Repeater>
+</StackLayout>

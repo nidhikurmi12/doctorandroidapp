@@ -1,0 +1,16 @@
+<StackLayout class="bg-white p-6 border-b border-gray-200">
+    <StackLayout class="items-center">
+        <!-- Profile Picture -->
+        <Label 
+            text="{{ userProfile.profileImage }}" 
+            class="text-6xl mb-4" />
+        
+        <!-- User Info -->
+        <Label 
+            text="{{ userProfile.name }}" 
+            class="text-xl font-bold mb-1" />
+        <Label 
+            text="{{ userProfile.email }}" 
+            class="text-gray-600 text-sm" />
+    </StackLayout>
+</StackLayout>

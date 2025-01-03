@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Lab Tests" flat="true" />
+    <ScrollView>
+        <StackLayout class="bg-gray-100">
+            <!-- Search Bar -->
+            <include src="~/components/lab/search-bar/lab-search" />
+            
+            <!-- Popular Tests Section -->
+            <include src="~/components/lab/popular-tests/popular-tests" />
+            
+            <!-- Available Labs Section -->
+            <include src="~/components/lab/available-labs/available-labs" />
+            
+            <!-- Essential Tests Section -->
+            <include src="~/components/lab/essential-tests/essential-tests" />
+        </StackLayout>
+    </ScrollView>
+</Page>

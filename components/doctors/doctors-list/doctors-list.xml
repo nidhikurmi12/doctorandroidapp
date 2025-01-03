@@ -1,0 +1,52 @@
+<StackLayout class="p-4">
+    <Repeater items="{{ doctors }}">
+        <Repeater.itemTemplate>
+            <CardView class="mb-4 bg-white rounded-lg elevation-1">
+                <GridLayout rows="auto,auto" columns="auto,*,auto" class="p-4">
+                    <!-- Doctor Image -->
+                    <Label 
+                        row="0" 
+                        col="0" 
+                        rowSpan="2"
+                        text="{{ image }}" 
+                        class="text-4xl mr-4" />
+                    
+                    <!-- Doctor Info -->
+                    <StackLayout row="0" col="1">
+                        <Label text="{{ name }}" class="font-bold" />
+                        <Label text="{{ specialty }}" class="text-gray-600 text-sm" />
+                        <GridLayout columns="auto,auto,*" class="mt-1">
+                            <Label col="0" text="{{ rating }} ⭐" class="text-sm mr-2" />
+                            <Label col="1" text="{{ reviews }} reviews" class="text-sm text-gray-500" />
+                        </GridLayout>
+                    </StackLayout>
+                    
+                    <!-- Consultation Fee -->
+                    <StackLayout row="0" col="2" class="text-right">
+                        <Label text="{{ consultationFee }}" class="text-blue-600 font-bold" />
+                        <Label text="per visit" class="text-gray-500 text-xs" />
+                    </StackLayout>
+                    
+                    <!-- Additional Info -->
+                    <StackLayout row="1" col="1" colSpan="2" class="mt-2">
+                        <Label text="{{ experience }}" class="text-gray-600 text-sm" />
+                        <Label text="{{ location }} • {{ distance }}" class="text-gray-600 text-sm" />
+                        <Label text="{{ availability }}" class="text-green-600 text-sm font-medium mt-1" />
+                        
+                        <!-- Consultation Types -->
+                        <GridLayout columns="auto,auto,auto" class="mt-2">
+                            <Label col="0" text="📹" class="mr-2" visibility="{{ consultationTypes.indexOf('video') > -1 ? 'visible' : 'collapsed' }}" />
+                            <Label col="1" text="📞" class="mr-2" visibility="{{ consultationTypes.indexOf('audio') > -1 ? 'visible' : 'collapsed' }}" />
+                            <Label col="2" text="🏥" visibility="{{ consultationTypes.indexOf('clinic') > -1 ? 'visible' : 'collapsed' }}" />
+                        </GridLayout>
+                        
+                        <Button 
+                            text="Book Appointment" 
+                            tap="{{ $parent.onBookAppointment }}"
+                            class="bg-blue-600 text-white text-sm p-2 rounded mt-2" />
+                    </StackLayout>
+                </GridLayout>
+            </CardView>
+        </Repeater.itemTemplate>
+    </Repeater>
+</StackLayout>

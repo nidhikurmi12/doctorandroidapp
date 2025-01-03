@@ -1,0 +1,18 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ActionBar title="Medicine" flat="true" />
+    <ScrollView>
+        <StackLayout class="bg-gray-100">
+            <!-- Search Bar -->
+            <include src="~/components/medicine/search-bar/medicine-search" />
+            
+            <!-- Upload Prescription Button -->
+            <include src="~/components/medicine/prescription-upload/prescription-upload" />
+            
+            <!-- Medicine Categories -->
+            <include src="~/components/medicine/categories/medicine-categories" />
+            
+            <!-- Medicine List -->
+            <include src="~/components/medicine/list/medicine-list" />
+        </StackLayout>
+    </ScrollView>
+</Page>

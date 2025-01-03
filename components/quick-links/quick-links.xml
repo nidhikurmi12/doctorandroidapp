@@ -1,0 +1,10 @@
+<GridLayout rows="auto" columns="*,*,*" class="p-4">
+    <Repeater items="{{ quickLinks }}">
+        <Repeater.itemTemplate>
+            <StackLayout tap="{{ onQuickLinkTap }}" class="text-center p-2">
+                <Label text="{{ icon }}" class="text-2xl" />
+                <Label text="{{ title }}" textWrap="true" class="text-sm mt-1" />
+            </StackLayout>
+        </Repeater.itemTemplate>
+    </GridLayout>
+</GridLayout>

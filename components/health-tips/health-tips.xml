@@ -1,0 +1,12 @@
+<ScrollView orientation="horizontal" class="m-4">
+    <Repeater items="{{ healthTips }}">
+        <Repeater.itemTemplate>
+            <CardView class="m-2 bg-white rounded-lg elevation-1" width="250">
+                <StackLayout class="p-4">
+                    <Label text="{{ title }}" class="font-bold" />
+                    <Label text="{{ description }}" textWrap="true" class="text-gray-600" />
+                </StackLayout>
+            </CardView>
+        </Repeater.itemTemplate>
+    </ScrollView>
+</ScrollView>

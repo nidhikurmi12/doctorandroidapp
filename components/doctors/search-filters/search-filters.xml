@@ -1,0 +1,26 @@
+<StackLayout class="p-4 bg-white border-b border-gray-200">
+    <!-- Search Bar -->
+    <GridLayout columns="*,auto" class="bg-gray-100 rounded-lg p-2 mb-4">
+        <TextField 
+            col="0"
+            text="{{ searchQuery }}"
+            hint="Search doctors by name or specialty"
+            class="p-2"
+            returnKeyType="search"
+            returnPress="{{ onSearch }}" />
+        <Label 
+            col="1" 
+            text="🔍" 
+            class="text-xl p-2" 
+            tap="{{ onSearch }}" />
+    </GridLayout>
+    
+    <!-- Filter Pills -->
+    <ScrollView orientation="horizontal">
+        <StackLayout orientation="horizontal" class="space-x-2">
+            <Label text="Sort by: Rating" class="text-blue-600 bg-blue-50 px-4 py-2 rounded-full" />
+            <Label text="Available Today" class="text-blue-600 bg-blue-50 px-4 py-2 rounded-full" />
+            <Label text="Distance" class="text-blue-600 bg-blue-50 px-4 py-2 rounded-full" />
+        </StackLayout>
+    </ScrollView>
+</StackLayout>

@@ -1,0 +1,19 @@
+<StackLayout class="p-4 bg-white border-b border-gray-200">
+    <Label text="Popular Tests" class="text-xl font-bold mb-4" />
+    <ScrollView orientation="horizontal">
+        <Repeater items="{{ popularTests }}">
+            <Repeater.itemTemplate>
+                <GridLayout class="mr-4 bg-blue-50 rounded-lg p-4" width="200">
+                    <StackLayout>
+                        <Label text="{{ name }}" class="font-bold mb-2" />
+                        <Label text="{{ description }}" class="text-gray-600 text-sm" textWrap="true" />
+                        <Label text="{{ price }}" class="text-blue-600 font-bold mt-2" />
+                        <Button 
+                            text="Book Now" 
+                            tap="{{ $parent.onBookTest }}"
+                            class="bg-blue-600 text-white text-sm p-2 rounded mt-2" />
+                    </StackLayout>
+                </GridLayout>
+            </Repeater.itemTemplate>
+        </ScrollView>
+    </StackLayout>

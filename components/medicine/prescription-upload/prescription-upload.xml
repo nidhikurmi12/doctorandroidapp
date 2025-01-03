@@ -1,0 +1,9 @@
+<StackLayout class="p-4 bg-white border-b border-gray-200">
+    <Button 
+        text="📄 Upload Prescription" 
+        tap="{{ onUploadPrescription }}"
+        class="bg-blue-600 text-white font-medium p-4 rounded-lg" />
+    <Label 
+        text="Upload prescription for quick ordering" 
+        class="text-gray-600 text-sm text-center mt-2" />
+</StackLayout>

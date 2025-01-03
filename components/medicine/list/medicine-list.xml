@@ -1,0 +1,21 @@
+<StackLayout class="p-4">
+    <Repeater items="{{ medicines }}">
+        <Repeater.itemTemplate>
+            <CardView class="mb-4 bg-white rounded-lg elevation-1">
+                <GridLayout rows="auto,auto" columns="*,auto" class="p-4">
+                    <StackLayout row="0" col="0">
+                        <Label text="{{ name }}" class="font-bold text-lg" />
+                        <Label text="{{ description }}" class="text-gray-600" textWrap="true" />
+                    </StackLayout>
+                    <StackLayout row="0" col="1" rowSpan="2" class="justify-center">
+                        <Label text="{{ price }}" class="text-blue-600 font-bold" />
+                        <Button 
+                            text="Add" 
+                            tap="{{ $parent.onAddToCart }}"
+                            class="bg-blue-600 text-white text-sm p-2 rounded" />
+                    </StackLayout>
+                </GridLayout>
+            </CardView>
+        </Repeater.itemTemplate>
+    </Repeater>
+</StackLayout>

@@ -1,0 +1,10 @@
+<GridLayout rows="*" columns="*,*,*,*,*" class="bg-white border-t border-gray-200 p-2">
+    <Repeater items="{{ navigationItems }}" colSpan="5">
+        <Repeater.itemTemplate>
+            <StackLayout tap="{{ $parent.onTabTap }}" class="text-center p-2" col="{{ index }}">
+                <Label text="{{ icon }}" class="text-2xl" />
+                <Label text="{{ title }}" class="text-xs" textWrap="true" />
+            </StackLayout>
+        </Repeater.itemTemplate>
+    </Repeater>
+</GridLayout>

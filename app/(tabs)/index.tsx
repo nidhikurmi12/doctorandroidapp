@@ -11,7 +11,7 @@ import {
 import CountrySelector from "../../components/country";
 export default function HomeScreen() {
   const handleCountrySelect = (country) => {
-    console.log('Selected country:', country);
+    console.log("Selected country:", country);
   };
   return (
     <SafeAreaView style={styles.container}>
@@ -25,7 +25,7 @@ export default function HomeScreen() {
       </View>
       <View style={styles.formContainer}>
         <TouchableOpacity style={styles.countrySelector}>
-        <CountrySelector onSelect={handleCountrySelect} />
+          <CountrySelector onSelect={handleCountrySelect} />
         </TouchableOpacity>
         <View style={styles.inputContainer}>
           <TextInput
