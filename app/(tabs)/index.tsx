@@ -1,87 +1,154 @@
-import React from 'react';
-import {StyleSheet, Button, View, Text, Alert} from 'react-native';
-import {SafeAreaView, SafeAreaProvider} from 'react-native-safe-area-context';
-const Separator = () => <View style={styles.separator} />;
-
-
+import React from "react";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  StyleSheet,
+  Image,
+  SafeAreaView,
+} from "react-native";
+import CountrySelector from "../../components/country";
 export default function HomeScreen() {
+  const handleCountrySelect = (country) => {
+    console.log('Selected country:', country);
+  };
   return (
-    <SafeAreaProvider>
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text style={styles.title}>
-          The title and onPress handler are required. It is recommended to set
-          accessibilityLabel to help make your app usable by everyone.
-        </Text>
-        <Button
-          title="Press me"
-          onPress={() => Alert.alert('Simple Button pressed')}
+      <View style={styles.logoContainer}>
+        <Text style={styles.skipText}>Skip</Text>
+        <Image
+          source={require("../../assets/images/doctor.png")}
+          style={styles.logo}
         />
+        <Text style={styles.appName}>HealthApp</Text>
       </View>
-      <Separator />
-      <View>
-        <Text style={styles.title}>
-          Adjust the color in a way that looks standard on each platform. On
-          iOS, the color prop controls the color of the text. On Android, the
-          color adjusts the background color of the button.
-        </Text>
-        <Button
-          title="Press me"
-          color="#f194ff"
-          onPress={() => Alert.alert('Button with adjusted color pressed')}
-        />
-      </View>
-      <Separator />
-      <View>
-        <Text style={styles.title}>
-          All interaction for the component are disabled.
-        </Text>
-        <Button
-          title="Press me"
-          disabled
-          onPress={() => Alert.alert('Cannot press this one')}
-        />
-      </View>
-      <Separator />
-      <View>
-        <Text style={styles.title}>
-          This layout strategy lets the title define the width of the button.
-        </Text>
-        <View style={styles.fixToText}>
-          <Button
-            title="Left button"
-            onPress={() => Alert.alert('Left button pressed')}
+      <View style={styles.formContainer}>
+        <TouchableOpacity style={styles.countrySelector}>
+        <CountrySelector onSelect={handleCountrySelect} />
+        </TouchableOpacity>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Phone Number"
+            keyboardType="phone-pad"
+            value="9109943899"
           />
-          <Button
-            title="Right button"
-            onPress={() => Alert.alert('Right button pressed')}
-          />
+        </View>
+        <TouchableOpacity style={styles.continueButton}>
+          <Text style={styles.continueText}>Continue</Text>
+        </TouchableOpacity>
+        <View style={styles.socialLogin}>
+          <Text style={styles.socialText}>Or quick continue with</Text>
+          <TouchableOpacity style={styles.googleButton}>
+            <Image
+              source={require("../../assets/images/google.png")}
+              style={styles.googleIcon}
+            />
+            <Text>Google</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </SafeAreaView>
-  </SafeAreaProvider>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
+    backgroundColor: "#6B66F7",
   },
-  title: {
-    textAlign: 'center',
-    marginVertical: 8,
-    color:"white"
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
   },
-  fixToText: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+  time: {
+    color: "white",
   },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
+  statusIcons: {
+    flexDirection: "row",
+  },
+  logoContainer: {
+    alignItems: "center",
+    marginTop: 20,
+  },
+  skipText: {
+    color: "white",
+    position: "absolute",
+    right: 20,
+    top: 0,
+  },
+  logo: {
+    width: 300,
+    height: 300,
+  },
+  appName: {
+    color: "white",
+    fontSize: 24,
+    fontWeight: "bold",
+    marginTop: 10,
+    marginBottom: 15,
+  },
+  illustrationContainer: {
+    alignItems: "center",
+    marginVertical: 30,
+    height: 0,
+  },
+  formContainer: {
+    backgroundColor: "white",
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+    padding: 20,
+    flex: 1,
+  },
+  countrySelector: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#F5F5F5",
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 15,
+  },
+  inputContainer: {
+    marginBottom: 20,
+  },
+  input: {
+    backgroundColor: "#F5F5F5",
+    padding: 15,
+    borderRadius: 10,
+    fontSize: 16,
+  },
+  continueButton: {
+    backgroundColor: "#6B66F7",
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+  },
+  continueText: {
+    color: "white",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  socialLogin: {
+    marginTop: 20,
+    alignItems: "center",
+  },
+  socialText: {
+    color: "#666",
+    marginBottom: 15,
+  },
+  googleButton: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#F5F5F5",
+    padding: 15,
+    borderRadius: 10,
+    width: "100%",
+    justifyContent: "center",
+  },
+  googleIcon: {
+    width: 20,
+    height: 20,
+    marginRight: 10,
   },
 });
-
